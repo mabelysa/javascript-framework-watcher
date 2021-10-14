@@ -1,6 +1,22 @@
-/* global Chart */
+/* global Chart, axios */
 
-axios
+const axios = require('axios').default;
+
+// axios.<method> will now provide autocomplete and parameter typings
+
+axios.get("https://api.github.com/repos/vuejs/vue")
+  .then(function (response) {
+    // handle success
+    console.log(response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+  });
+
 
 var ctx = document.getElementById("myChart").getContext("2d");
 var myChart = new Chart(ctx, {
